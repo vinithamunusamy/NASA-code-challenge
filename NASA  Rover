@@ -1,0 +1,51 @@
+x = 3
+y = 3
+direction = "E"
+def turnleft():
+  print("turning left")
+  global direction
+  if direction == "N":
+    direction = "W"
+  elif direction == "W":
+    direction = "S"
+  elif direction == "S":
+    direction = "E"
+  elif direction == "E":
+    direction = "N"
+def turnright():
+  print("turning Right")
+  global direction
+  if direction == "N":
+    direction = "E"
+  elif direction == "E":
+    direction = "S"
+  elif direction == "S":
+    direction = "W"
+  elif direction == "W":
+    direction = "N"
+def moveforward():
+  print("Moving Forward")
+  global x,y,direction
+  if direction == "N":
+    y = y + 1
+  elif direction == "E":
+    x = x + 1
+  elif direction == "S":
+    y = y - 1
+  elif direction == "W":
+    x = x - 1
+ 
+
+commands = ["M","M","R","M","M","R","M", "R","R","M"]
+for c in commands:
+  print(c)
+  if c == "L":
+    turnleft()
+  elif c == "R":
+    turnright()
+  elif c == "M":
+    moveforward()
+
+print(x)
+print(y)
+print(direction)
